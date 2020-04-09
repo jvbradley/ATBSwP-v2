@@ -52,7 +52,7 @@ def isValidChessBoard(cbReadyCheck):
                 invalidLocations += 1
 
     if invalidLocations == 0:
-        validationLog += '\n\tValidly position pieces: ' + str(validLocations) + '\n'
+        validationLog += '\n\tValidly positioned pieces: ' + str(validLocations) + '\n'
         validationLog += '\tThis script has completed successfully.'
     elif validLocations > 32 or validLocations < 32:
         validationLog += '\n\tThere are an invalid number of pieces on the board.\n'
