@@ -51,7 +51,7 @@ def isValidChessBoard(cbReadyCheck):
                 validationLog += '\tTHIS ITEM NEEDS CORRECTION: ' + value + ' / ' + key + '\n'
                 invalidLocations += 1
 
-    if invalidLocations == 0:
+    if invalidLocations == 0 and validLocations == 32:
         validationLog += '\n\tValidly positioned pieces: ' + str(validLocations) + '\n'
         validationLog += '\tThis script has completed successfully.'
     elif validLocations > 32 or validLocations < 32:
@@ -88,8 +88,6 @@ def getChessPieces():
             cpInfoKey = color + '-' + type
             # Starting Column, On-Display Name
             chessPieceInfo[cpInfoKey] = [typeColumn, colorName.title() + ' ' + type.title()]
-    # import pprint
-    # pprint.pprint(chessPieceInfo)
 
     for cpInfoKey, cpData in chessPieceInfo.items():
         if 'pawn' in cpInfoKey:
