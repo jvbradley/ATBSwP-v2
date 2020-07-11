@@ -34,6 +34,9 @@ def madLibs():
         os.mkdir(madLibsHome) # Folder created
         os.chdir(madLibsHome) # Set the current working directory
 
+    madLibsFiles = list(madLibsHome.glob('Mad*.txt'))
+    madLibsFileName = 'madLibs-UserOutput-' + str(len(madLibsFiles) + 1) + '.txt'
+    madLibsFile = open(madLibsFileName, 'w')
     # This is the text through which we'll iterate.
     madLibsText = 'The ADJECTIVE panda walked to the NOUN and then VERB. A nearby NOUN was unaffected by these events.'
     madLibsTextList = madLibsText.split(' ')
@@ -50,8 +53,11 @@ def madLibs():
                 inputText += ' ' + word.lower() + ': '
 
             userInput = input(inputText)
-            madLibsText = madLibsText.replace(word, userInput)
+            madLibsText = madLibsText.replace(word, userInput, 1)
 
-
+    print('Your Mad Libs output:')
     print(madLibsText)
+    print('\nSaved to file: ' + str(madLibsFileName))
+    madLibsFile.write(madLibsText)
+    madLibsFile.close()
 madLibs()
