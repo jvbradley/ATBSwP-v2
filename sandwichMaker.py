@@ -42,7 +42,7 @@ def sandwichMaker():
         for item in itemList[0]:
             itemList[1].append(generateRandomPrices())
 
-    print('\n\tYe Olde Timey Sandwhich Shoppe Menu\n')
+    print('\n\tYe Olde Timey Sandwich Shoppe Menu\n')
 
     # This builds the sandwich.
     for itemCategory, itemList in sandwichOptions.items():
